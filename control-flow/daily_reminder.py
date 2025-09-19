@@ -24,5 +24,5 @@ else:
         message += "."
 
 # Display the final reminder
-print(f"{message}")
+print(f"Reminder:")
 
