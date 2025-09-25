@@ -2,7 +2,7 @@
 
 def display_menu():
     """Displays the main menu options to the user."""
-    print("\nShopping List Manager")
+    print("\nShopping List Manager")  # Required menu title
     print("1. Add Item")
     print("2. Remove Item")
     print("3. View List")
@@ -14,8 +14,11 @@ def main():
     shopping_list = []
 
     while True:
+        # Call the display_menu function
         display_menu()
-        choice = input("Enter your choice: ").strip()
+
+        # Get user choice and ensure it's a number
+        choice = input("Enter your choice (1-4): ").strip()
 
         if choice == '1':
             # Add an item to the shopping list
@@ -53,5 +56,6 @@ def main():
             print("Invalid choice. Please enter a number between 1 and 4.")
 
 
+# Run the main function only when the script is executed directly
 if __name__ == "__main__":
     main()
