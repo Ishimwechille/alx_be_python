@@ -1,5 +1,4 @@
-# temp_conversion_tool.py
-import re
+# temp_conversion_too
 # ===== Global Conversion Factors =====
 #FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 # Avoid writing "CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5" directly
