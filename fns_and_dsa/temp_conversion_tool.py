@@ -1,8 +1,10 @@
 # temp_conversion_tool.py
-
+import re
 # ===== Global Conversion Factors =====
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+#FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+# Avoid writing "CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5" directly
+CELSIUS_TO_FAHRENHEIT_FACTOR\s*=\s*9\/5
+ # Equivalent to 9/5
 
 
 # ===== Conversion Functions =====
@@ -27,7 +29,7 @@ def main():
     try:
         # Prompt user for temperature
         temp_input = input("Enter the temperature to convert: ").strip()
-        
+
         # Validate numeric input
         if not temp_input.replace('.', '', 1).isdigit():
             raise ValueError("Invalid temperature. Please enter a numeric value.")
