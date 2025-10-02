@@ -4,7 +4,7 @@ import sys
 class BankAccount:
     def __init__(self, initial_balance=0):
         """Initialize the account with an optional starting balance (default = 0)."""
-        self.__account_balance = initial_balance  # encapsulated balance (private)
+        self.__account_balance = initial_balance  # private attribute
 
     def deposit(self, amount):
         """Deposit money into the account."""
@@ -19,11 +19,11 @@ class BankAccount:
         return False
 
     def display_balance(self):
-        """Display the current balance."""
-        print(f"Current Balance: ${self.__account_balance}")
+        """Display the current balance with two decimal places."""
+        print(f"Current Balance: ${self.__account_balance:.2f}")
 
 def main():
-    # Example: start account with $100
+    # Initialize account with $100
     account = BankAccount(100)
 
     if len(sys.argv) < 2:
@@ -31,16 +31,16 @@ def main():
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    # Split the command and parameter(s)
+    # Split the command and optional parameter
     command, *params = sys.argv[1].split(':')
     amount = float(params[0]) if params else None
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
-        print(f"Deposited: ${amount}")
+        print(f"Deposited: ${amount:.2f}")
     elif command == "withdraw" and amount is not None:
         if account.withdraw(amount):
-            print(f"Withdrew: ${amount}")
+            print(f"Withdrew: ${amount:.2f}")
         else:
             print("Insufficient funds.")
     elif command == "display":
